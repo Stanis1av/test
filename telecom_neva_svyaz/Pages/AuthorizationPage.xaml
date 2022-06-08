@@ -1,0 +1,28 @@
+﻿<Page x:Class="telecom_neva_svyaz.Pages.AuthorizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:telecom_neva_svyaz.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1100"
+      MinHeight="700"
+      MinWidth="1400"
+      Title="Авторизация">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Авторизируйтесь" HorizontalAlignment="Center" FontSize="25" Grid.Row="0"/>
+
+        <StackPanel Grid.Row="1" Width="400">
+            <TextBlock Text="Войти как пользователь"/>
+            <Button Content="Войти" Click="btSignInUser"/>
+            <TextBlock Text="Войти как администратор"/>
+            <TextBox x:Name="tbPassword"/>
+            <Button Content="Войти" Click="btSignInAdmin"/>
+        </StackPanel>
+    </Grid>
+</Page>

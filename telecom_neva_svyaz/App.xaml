@@ -1,0 +1,41 @@
+﻿<Application x:Class="telecom_neva_svyaz.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:telecom_neva_svyaz"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <SolidColorBrush x:Key="Usually" Color="#B5DEFA"/>
+        <SolidColorBrush x:Key="Accent" Color="#4A67F7"/>
+        
+        <BitmapImage x:Key="ServicePicture" UriSource="/Resources/picture.png"/>
+
+        <Style x:Key="BaseButton" TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Background" Value="{StaticResource Usually}"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource BaseButton}"/>
+
+        <Style x:Key="BaseCBox" TargetType="ComboBox">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource BaseCBox}"/>
+
+        <Style x:Key="BaseTBlock" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTBlock}"/>
+
+        <Style x:Key="BaseTBox" TargetType="TextBox">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource BaseTBox}"/>
+        
+    </Application.Resources>
+</Application>

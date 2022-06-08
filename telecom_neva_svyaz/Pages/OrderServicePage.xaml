@@ -1,0 +1,57 @@
+﻿<Page x:Class="telecom_neva_svyaz.Pages.OrderServicePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:telecom_neva_svyaz.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrderServicePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer CanContentScroll="True" Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" BorderThickness="1" BorderBrush="Gray" Margin="5" Width="600">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Margin="10" Source="{Binding Service.ServicePhoto}" Grid.Row="0" Width="400" />
+
+                        <StackPanel Margin="10" Grid.Row="1">
+                            <TextBlock Text="{Binding Service.ServiceName}" FontSize="28" TextWrapping="WrapWithOverflow"/>
+                            <TextBlock Text="{Binding Service.IsVisit}"/>
+                            <TextBlock Text="{Binding Service.ServiceDurationInMunutes, StringFormat='Время выполнения: {0} минут'}"/>
+                            <TextBlock Text="{Binding Service.ServiceDescription}" TextWrapping="WrapWithOverflow"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Выберите клиента"/>
+                    <ComboBox Name="CbClients" Height="50" Width="450" SelectedItem="{Binding Client}" Margin="10" DisplayMemberPath="ClientFIO"/>
+                    <TextBlock Text="Выберите сотрудника"/>
+                    <ComboBox Name="CbStaffs" Height="50" Width="450" SelectedItem="{Binding Staff}" Margin="10" DisplayMemberPath="StaffFIO"/>
+                    <TextBlock Text="Укажите дату"/>
+                    <ComboBox Name="CbRequestType" Height="50" Width="450" SelectedItem="{Binding RequestType}" Margin="10" DisplayMemberPath="RequestTypeName"/>
+                    <TextBlock Text="Укажите дату"/>
+                    <DatePicker FontSize="20" SelectedDate="{Binding RequestDate}"  Margin="10"/>
+                    <TextBlock Text="Укажите время"/>
+                    <TextBox Text="{Binding RequestDate ,StringFormat='HH:mm'}" Margin="10"/>
+
+                    <Button Content="Записаться" Click="OrderClick"  Margin="10"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>
